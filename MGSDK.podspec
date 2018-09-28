@@ -21,11 +21,16 @@
 
     s.homepage         = 'https://github.com/georgescumihai/MGRelease.git'
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.license      = {
+      :type => 'Copyright',
+      :text => <<-LICENSE
+        Copyright 2018 Kolibree. All rights reserved.
+        LICENSE
+    }
     s.author           = { 'Mihai Georgescu' => 'georgescu.mihai09@gmail.com' }
 
-    s.source           = { :git => 'https://github.com/georgescumihai/MGRelease.git', :tag => s.version }
-    #s.source = { :http => "https://github.com/georgescumihai/MGRelease/releases/download/1.0/MGSDK.framework.zip" }
+    # s.source           = { :git => 'https://github.com/georgescumihai/MGRelease.git', :tag => s.version.to_s }
+    s.source = { :http => "https://www.dropbox.com/s/mzutqw5atx6rj50/MGSDK.framework.zip?dl=0" }
 
     s.vendored_frameworks = 'Build/MGSampleFramework.framework', 'Build/MGRandom.framework'
 
