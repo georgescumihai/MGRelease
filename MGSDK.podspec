@@ -23,19 +23,29 @@
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     s.license      = {
       :type => 'Copyright',
-      :text => <<-LICENSE
-        Copyright 2018 Kolibree. All rights reserved.
-        LICENSE
+      :file => 'Build/LICENSE'
     }
     s.author           = { 'Mihai Georgescu' => 'georgescu.mihai09@gmail.com' }
+    s.default_subspec = 'Xcode10'
 
+    s.subspec 'Xcode9' do |x9|
+      #x9.source = { :http => "https://github.com/georgescumihai/MGRelease/releases/download/1.0/MGSDK-XCode9.4.1.framework.zip" }
+      x9.vendored_frameworks = 'Build/Xcode9.4.1/MGSampleFramework.framework', 'Build/Xcode9.4.1/MGRandom.framework'
+    end
+
+    s.subspec 'Xcode10' do |x10|
+      #x10.source = { :http => "https://github.com/georgescumihai/MGRelease/releases/download/1.0/MGSDK-Xcode10.framework.zip" }
+      x10.vendored_frameworks = 'Build/Xcode10/MGSampleFramework.framework', 'Build/Xcode10/MGRandom.framework'
+    end
+
+    s.source = { :http => "https://github.com/georgescumihai/MGRelease/releases/download/1.0/MGSDK.framework.zip" }
     # s.source           = { :git => 'https://github.com/georgescumihai/MGRelease.git', :tag => s.version.to_s }
-    s.source = { :http => "https://www.dropbox.com/s/mzutqw5atx6rj50/MGSDK.framework.zip?dl=0" }
+    # s.source = { :http => "https://www.dropbox.com/s/mzutqw5atx6rj50/MGSDK.framework.zip?dl=0" }
 
-    s.vendored_frameworks = 'Build/MGSampleFramework.framework', 'Build/MGRandom.framework'
 
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
+    s.platform          = :ios
     s.ios.deployment_target = '9.3'
 
     # s.resource_bundles = {
